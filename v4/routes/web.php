@@ -1,4 +1,7 @@
 <?php
+use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -29,10 +32,9 @@ $router->post('/bar', function(){
 });
 
 $router->group(['prefix'=> 'in'], function() use($router){
-    $router->post('kirim', function(){
-        return 'Kirim Data ke ELJ!!';
+    $router->post('kirim', function(Request $request){
+      
+
     });
-    $router->get('tarik', function(){
-        return 'Tampilkan data dari ELJ!!';
-    });
+
 });
