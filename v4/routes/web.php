@@ -23,18 +23,6 @@ $router->get('/key', function () {
     return str_random(32);
 });
 
-$router->get('/foo', function(){
-    return 'Hello, GET Method!';
-});
-
-$router->post('/bar', function(){
-    return 'Hello, POST MEthod!';
-});
-
-$router->group(['prefix'=> 'in'], function() use($router){
-    $router->post('kirim', function(Request $request){
-      
-
-    });
-
-});
+$router->post('/register','AuthController@register');
+$router->post('/login','AuthController@login');
+$router->get('/user/{id}','UserController@show');
